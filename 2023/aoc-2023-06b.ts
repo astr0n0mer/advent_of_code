@@ -8,7 +8,9 @@ Distance:  9  40  200
   console.log(new Array(100).fill("=").join(""));
 
   const inputLines = input.split("\n");
-  const [raceDurations, distanceRecords] = inputLines.filter(line => line.trim()).map((line) => line.split(/:\D+/)[1].split(/\s+/).map(Number));
+  const [raceDurations, distanceRecords] = inputLines.filter(line => line.trim()).map((line) => [+line.split(/:\D+/)[1].replace(/\s+/g, "")]);
+
+  // INFO: the following code is copied from 06a
 
   const raceDurationToDistanceRecords = raceDurations.map((raceDuration, index) => ({ raceDuration, distanceRecord: distanceRecords[index] }));
 
