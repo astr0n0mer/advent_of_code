@@ -32,7 +32,7 @@ let INPUT = `seeds: 79 14 55 13
  60 56 37
  56 93 4`;
 
-INPUT = require("fs").readFileSync("./aoc-2023-05.txt", "utf-8");
+INPUT = require("fs").readFileSync("./05.txt", "utf-8");
 
 console.log(new Array(100).fill("=").join(""));
 

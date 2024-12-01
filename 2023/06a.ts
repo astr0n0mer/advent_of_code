@@ -4,13 +4,11 @@ Time:      7  15   30
 Distance:  9  40  200
 `;
 
-  input = require("fs").readFileSync("./aoc-2023-06.txt", "utf-8");
+  input = require("fs").readFileSync("./06.txt", "utf-8");
   console.log(new Array(100).fill("=").join(""));
 
   const inputLines = input.split("\n");
-  const [raceDurations, distanceRecords] = inputLines.filter(line => line.trim()).map((line) => [+line.split(/:\D+/)[1].replace(/\s+/g, "")]);
-
-  // INFO: the following code is copied from 06a
+  const [raceDurations, distanceRecords] = inputLines.filter(line => line.trim()).map((line) => line.split(/:\D+/)[1].split(/\s+/).map(Number));
 
   const raceDurationToDistanceRecords = raceDurations.map((raceDuration, index) => ({ raceDuration, distanceRecord: distanceRecords[index] }));
 
