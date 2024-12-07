@@ -1,5 +1,5 @@
 export const getInput = (input: string | undefined = undefined) => {
-	let INPUT_FILE: string = input ? input : require('fs').readFileSync('./01.txt', 'utf-8')
+	const INPUT_FILE: string = input ? input : require('fs').readFileSync('./01.txt', 'utf-8')
 
 	const { list_1, list_2 } = INPUT_FILE.trim().split('\n').reduce(({ list_1, list_2 }, line) => {
 		const [n1, n2] = line.trim().split(/\s+/).map(Number)
